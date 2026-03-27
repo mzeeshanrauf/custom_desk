@@ -7,22 +7,19 @@ app_license = "MIT"
 app_version = "1.0.0"
 
 # ─────────────────────────────────────────────────────────────
-#  Static assets — served directly via symlink (no esbuild needed)
-#  Path: /assets/custom_desk/css/... and /assets/custom_desk/js/...
-#  These are plain CSS/JS files — NOT bundled through esbuild.
-#  The `web_include_*` keys work for desk pages in Frappe v16.
+#  Assets — Frappe v14/v15/v16 esbuild bundle system
+#
+#  Rules:
+#  1. Files named *.bundle.js / *.bundle.css anywhere inside
+#     public/ are auto-detected and compiled by Frappe's esbuild.
+#  2. In app_include_css / app_include_js use JUST the filename
+#     (no path). Frappe resolves it to the correct dist path.
 # ─────────────────────────────────────────────────────────────
 
-app_include_css = [
-    "/assets/custom_desk/css/custom_desk.css",
-]
-
-app_include_js = [
-    "/assets/custom_desk/js/custom_desk.js",
-]
+app_include_css = ["custom_desk.bundle.css"]
+app_include_js  = ["custom_desk.bundle.js"]
 
 # ─────────────────────────────────────────────────────────────
-#  Boot session — passes server config to the browser
+#  Boot session — attaches config to frappe.boot in the browser
 # ─────────────────────────────────────────────────────────────
-
 boot_session = "custom_desk.boot.get_boot_info"
