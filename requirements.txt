@@ -1,1 +1,1 @@
-frappe
+# No pip dependencies — frappe is already present in the bench environment

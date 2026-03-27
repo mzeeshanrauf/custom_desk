@@ -3,7 +3,7 @@ name = "custom_desk"
 version = "1.0.0"
 description = "Custom Light-Theme Desk for ERPNext v16"
 requires-python = ">=3.10"
-dependencies = ["frappe"]
+dependencies = []
 
 [build-system]
 requires = ["flit_core >=3.2.0,<4"]
