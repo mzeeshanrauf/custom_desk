@@ -1,0 +1,8 @@
+{
+  "name": "custom_desk",
+  "version": "1.0.0",
+  "description": "Custom Desk Theme for ERPNext v16",
+  "scripts": {},
+  "private": true,
+  "devDependencies": {}
+}

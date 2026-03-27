@@ -1,5 +1,3 @@
-from . import __version__ as app_version
-
 app_name = "custom_desk"
 app_title = "Custom Desk"
 app_publisher = "Your Company"
@@ -9,7 +7,10 @@ app_license = "MIT"
 app_version = "1.0.0"
 
 # ─────────────────────────────────────────────────────────────
-#  Assets injected into every Desk page
+#  Static assets — served directly via symlink (no esbuild needed)
+#  Path: /assets/custom_desk/css/... and /assets/custom_desk/js/...
+#  These are plain CSS/JS files — NOT bundled through esbuild.
+#  The `web_include_*` keys work for desk pages in Frappe v16.
 # ─────────────────────────────────────────────────────────────
 
 app_include_css = [
@@ -21,23 +22,7 @@ app_include_js = [
 ]
 
 # ─────────────────────────────────────────────────────────────
-#  Boot session data — passes server-side config to the browser
+#  Boot session — passes server config to the browser
 # ─────────────────────────────────────────────────────────────
 
 boot_session = "custom_desk.boot.get_boot_info"
-
-# ─────────────────────────────────────────────────────────────
-#  Override default home page (optional – comment out to keep
-#  ERPNext's default workspace routing)
-# ─────────────────────────────────────────────────────────────
-
-# home_page = "custom-desk"
-
-# ─────────────────────────────────────────────────────────────
-#  Jinja environment extras (not required for CSS-only approach)
-# ─────────────────────────────────────────────────────────────
-
-# jinja = {
-#     "methods": [],
-#     "filters": [],
-# }
